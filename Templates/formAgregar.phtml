@@ -1,0 +1,39 @@
+<form action="agregar/juego" method="POST"enctype="multipart/form-data">
+    <fieldset>
+        <legend>Agregue un juego</legend>
+
+        <div class="mb-3">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" name="nombre" required>
+        </div>
+         <div class="mb-3">
+            <label for="genero">Género:</label>
+            <input class="form-control" type="text" name="genero" required>
+        </div>
+        <div class="mb-3">
+            <input type="hidden" name="action" value="agregar/juego">
+        </div>
+
+
+        <div class="mb-3">
+            <select class="form-control" name="id_consola">
+                <?php
+                foreach ($consolas as $consola) {
+                    echo "<option value='$consola->id'>$consola->nombre</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <input type="file" name="imagen" id="imageToUpload">
+
+        </div>
+
+        <div>
+
+            <button class="btn btn-success" type="submit">ENVIAR</button>
+        </div>
+
+
+    </fieldset>
+</form>

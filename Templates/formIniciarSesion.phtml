@@ -1,0 +1,32 @@
+
+
+<div>
+    <h2>USUARIO DE PRUEBA</h2>
+    <ul>
+        <li>Usuario: webadmin</li>
+        <li>Contraseña: admin</li>
+    </ul>
+</div>
+
+<div>
+    <p><?php echo $error?></p>
+</div>
+<form action="login/" method="POST">
+    <fieldset>
+        <legend>INICIAR SESION</legend>
+
+        <div class="mb-3">
+            <label for="usuario">Nombre de usuario</label>
+            <input class="form-control" type="usuario" name="usuario" required>
+        </div>
+<div class="mb-3">
+            <input type="hidden" name="action" value="login/">
+        </div>
+        <div class="mb-3">
+            <label for="contraseña">Contraseña:</label>
+            <input class="form-control" type="password" name="password" required>
+        </div>
+
+        <button class="btn btn-success" type="submit">ENVIAR</button>
+    </fieldset>
+</form>
