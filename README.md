@@ -20,3 +20,18 @@ La API fue desarrollada en **PHP** con arquitectura **MVC** y conexión a **MySQ
 | POST   | /juegos  | Crea un nuevo juego (requiere nombre, consola, género, etc). | 201, 400 |
 | PUT    | /juegos/:id | Actualiza un juego existente. | 200, 400, 404 |
 | DELETE | /juegos/:id | Elimina un juego de la base de datos. | 200, 404 
+
+
+### 🔸 Parámetros opcionales en `/juegos`
+
+Podés combinar varios filtros en un solo pedido:
+
+GET /juegos?pagina=1&limite=5&orderBy=nombre&order=asc&genero=accion
+
+
+**Parámetros disponibles:**
+- `pagina` → número de página (por defecto 1)
+- `limite` → cantidad de resultados por página (por defecto 5)
+- `orderBy` → campo para ordenar (`nombre`, `genero`, `id_consola`, `id`)
+- `order` → dirección (`asc` o `desc`)
+- `genero` → filtra los juegos por género
